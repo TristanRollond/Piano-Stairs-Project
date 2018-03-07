@@ -3,7 +3,7 @@ const int trigger1 = 9;
 const int trigger2 = 7;
 
 const int echo1 = 10;
-const int echo1 = 11;
+const int echo2 = 11;
 
 void setup() {
   pinMode(piezo, OUTPUT);
@@ -12,15 +12,15 @@ void setup() {
   pinMode(echo1, INPUT); 
   pinMode(echo2, INPUT);
   Serial.begin(9600); 
-}
+};
 
 void loop() {
-  detectStep(trigger1, echo1, 1000)
-  detectStep(trigger2, echo2, 2000)
-}
+  detectStep(trigger1, echo1, 1000);
+  detectStep(trigger2, echo2, 2000);
+};
 
-void detectStep (trigger, echo, frequency) {
-  long duration;
+void detectStep(int trigger, int echo, int frequency) {
+   long duration;
   int distance;
   
   digitalWrite(trigger, LOW);
